@@ -27,3 +27,5 @@ docker-compose -p $NAME_PREFIX up -d --force-recreate
 
 # up application
 $WINPTY docker-compose -p $NAME_PREFIX start
+sleep 1
+docker-compose ps

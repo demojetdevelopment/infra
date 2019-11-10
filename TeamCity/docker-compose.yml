@@ -24,6 +24,7 @@ services:
       - ./agents/conf:/data/teamcity_agent/conf
     env_file:
       - .env
+    privileged: true
     networks:
       - teamcity
       - default
