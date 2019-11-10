@@ -1,0 +1,35 @@
+version: '3.6'
+
+services:
+  teamcity-server-instance:
+    container_name: teamcity-server-instance
+    image: jetbrains/teamcity-server
+    working_dir: /data/teamcity_server/datadir
+    volumes:
+      - ./data:/data/teamcity_server/datadir
+      - ./logs:/opt/teamcity/logs
+    ports:
+      - 8111:8111
+    env_file:
+      - .env
+    networks:
+      - teamcity
+      - default
+
+  teamcity-agent:
+    container_name: teamcity-agent
+    image: jetbrains/teamcity-agent
+    working_dir: /data/teamcity_agent
+    volumes:
+      - ./agents/conf:/data/teamcity_agent/conf
+    env_file:
+      - .env
+    networks:
+      - teamcity
+      - default
+
+networks:
+  default:
+    driver: bridge
+  teamcity:
+    external: true # if not created manually run command `docker network create teamcity`
