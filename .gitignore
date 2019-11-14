@@ -1,0 +1,8 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea
+/Hub
+/TeamCity/agents/conf/*
+/TeamCity/data/*
+/TeamCity/logs/*
+/TeamCity/.env
+.DS_Store
