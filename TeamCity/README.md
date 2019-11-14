@@ -1,5 +1,3 @@
-# Dockerized TeamCity
-
 ## Up TeamCity
 
 >Start project command in console
